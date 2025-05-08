@@ -1,18 +1,15 @@
 import express from "express";
 import { DBCommitsRepository } from "../modules/TDDCycles/Repositories/DBCommitsRepository";
-import { DBJobsRepository } from "../modules/TDDCycles/Repositories/DBJobsRepository";
 import { GithubRepository } from "../modules/TDDCycles/Repositories/GithubRepository";
 import TDDCyclesController from "../controllers/TDDCycles/TDDCyclesController";
 
 // Create instances of your repositories
 const dbCommitsRepository = new DBCommitsRepository();
-const dbJobsRepository = new DBJobsRepository();
 const githubRepository = new GithubRepository();
 
 // Create an instance of your controller
 const tddCyclesController = new TDDCyclesController(
   dbCommitsRepository,
-  dbJobsRepository,
   githubRepository
 );
 
@@ -25,6 +22,7 @@ TDDCyclesRouter.get(
   async (req, res) => await tddCyclesController.getTDDCycles(req, res)
 );
 
+<<<<<<< HEAD
 // Get all test results from a repository in Github
 TDDCyclesRouter.get(
   "/jobs",
@@ -48,3 +46,6 @@ TDDCyclesRouter.get(
 );
 
 export default TDDCyclesRouter;
+=======
+export default TDDCyclesRouter;
+>>>>>>> 8c9662f412d86b657841161462b5f134037ca568
