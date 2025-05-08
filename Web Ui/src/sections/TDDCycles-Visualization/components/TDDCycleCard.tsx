@@ -123,5 +123,4 @@ function TDDCycleCard({ commit }: Readonly<CycleReportViewProps>) {
   );
 }
 
-
 export default TDDCycleCard;
